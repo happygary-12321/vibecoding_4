@@ -1,0 +1,83 @@
+Interpreter: C:\Users\omen16\AppData\Local\Programs\Python\Python312\python.exe
+Python: 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
+Included check_cli: 9 tests
+Included check_contacts: 6 tests
+Included check_integration: 5 tests
+Included check_scheduling: 6 tests
+Included hw4.check_analytical: 2 tests
+Included hw4.check_conservation: 4 tests
+Included hw4.check_convergence: 1 tests
+Included hw4.check_function_coverage: 18 tests
+Included hw4.check_limiting: 4 tests
+Included hw4.check_symmetry: 3 tests
+Default trajectory: measured steps=2400, time=10 s; expected steps=2400, time=10 s; impact surfaces=['floor', 'left', 'right']
+floor, initial vy=-2: expected y=0.2, vy=+1.6; measured y=0.2, vy=+1.6; impact=True
+floor, initial vy=+2: expected y=0.2, vy=+2; measured y=0.2, vy=+2; impact=False
+floor, initial vy=+0: expected y=0.2, vy=+0; measured y=0.2, vy=+0; impact=False
+left, initial vx=-2: expected x=0.2, vx=+1.6; measured x=0.2, vx=+1.6; impact=True
+left, initial vx=+2: expected x=0.2, vx=+2; measured x=0.2, vx=+2; impact=False
+left, initial vx=+0: expected x=0.2, vx=+0; measured x=0.2, vx=+0; impact=False
+right, initial vx=-2: expected x=3.8, vx=-2; measured x=3.8, vx=-2; impact=False
+right, initial vx=+0: expected x=3.8, vx=+0; measured x=3.8, vx=+0; impact=False
+dt=1/240 final y (m): expected=5.0745625, measured=5.0745625, absolute tolerance=1e-10
+dt=1/240 final vy (m/s): expected=-9.81, measured=-9.81, absolute tolerance=1e-10
+dt=1/240 signed height error (m): expected=-0.0204375, measured=-0.0204375, absolute tolerance=1e-10
+dt=1/240: exact final y=5.095 m; max signed-error formula residual=6.33174068732e-15 m
+dt=1/480 final y (m): expected=5.08478125, measured=5.08478125, absolute tolerance=1e-10
+dt=1/480 final vy (m/s): expected=-9.81, measured=-9.81, absolute tolerance=1e-10
+dt=1/480 signed height error (m): expected=-0.01021875, measured=-0.01021875, absolute tolerance=1e-10
+dt=1/480: exact final y=5.095 m; max signed-error formula residual=7.35349281467e-15 m
+final coarse/fine error ratio: expected=2, measured=2, absolute tolerance=1e-07
+one step vy (m/s): expected=2.019, measured=2.019, absolute tolerance=1e-12
+one step y (m): expected=2.2019, measured=2.2019, absolute tolerance=1e-12
+one step x (m): expected=1.15, measured=1.15, absolute tolerance=1e-12
+one step time (s): expected=0.8, measured=0.8, absolute tolerance=1e-12
+zero gravity x (m): expected=-1, measured=-1, absolute tolerance=1e-10
+zero gravity y (m): expected=5, measured=5, absolute tolerance=1e-10
+Overload: expected steps=60, discarded=0.65 s, remainder=0.0075 s; measured steps=60, discarded=0.65, remainder=0.0075
+Display intervals 0.01/0.04/0.1 s: expected 240 steps and identical state; measured steps=240, states identical.
+elastic reflection h=1/16: (x,y,vx,vy)=(2.5, 3.0, -2.0, 0.5); expected=(2.5, 3, -2, 0.5)
+elastic reflection h=1/32: (x,y,vx,vy)=(2.5, 3.0, -2.0, 0.5); expected=(2.5, 3, -2, 0.5)
+launch step, h=0.01, m=0.25: y=2.95095, expected=2.95095; max height-bias residual=2.3e-15 m
+launch step, h=0.01, m=7.0: y=2.95095, expected=2.95095; max height-bias residual=2.3e-15 m
+launch step, h=0.005, m=0.25: y=2.975475, expected=2.975475; max height-bias residual=2.13e-15 m
+launch step, h=0.005, m=7.0: y=2.975475, expected=2.975475; max height-bias residual=2.13e-15 m
+launch complete_step, h=0.01, m=0.25: y=2.95095, expected=2.95095; max height-bias residual=2.3e-15 m
+launch complete_step, h=0.01, m=7.0: y=2.95095, expected=2.95095; max height-bias residual=2.3e-15 m
+launch complete_step, h=0.005, m=0.25: y=2.975475, expected=2.975475; max height-bias residual=2.13e-15 m
+launch complete_step, h=0.005, m=7.0: y=2.975475, expected=2.975475; max height-bias residual=2.13e-15 m
+energy helper: 4 independent static values passed
+free flight m=0.25: p0=(0.425, -0.225), K0=0.4625 J; max momentum drift=0, max K drift=0 J
+free flight m=2.5: p0=(4.25, -2.25), K0=4.625 J; max momentum drift=0, max K drift=0 J
+free flight m=1000.0: p0=(1700.0, -900.0), K0=1850 J; max momentum drift=0, max K drift=0 J
+inelastic floor, e=0.3: dK=-6.017375 J, expected=-6.017375 J, residual=8.88e-16 J
+inelastic left, e=0.3: dK=-6.017375 J, expected=-6.017375 J, residual=8.88e-16 J
+inelastic floor, e=0.8: dK=-2.3805 J, expected=-2.3805 J, residual=-8.88e-16 J
+inelastic left, e=0.8: dK=-2.3805 J, expected=-2.3805 J, residual=-8.88e-16 J
+elastic vx0=-2.3: impacts={'floor': 1, 'left': 5, 'right': 5}, K0=8.125 J, max K drift=0 J
+elastic vx0=2.3: impacts={'floor': 1, 'left': 5, 'right': 5}, K0=8.125 J, max K drift=0 J
+step: h=0.0625 s N=24 T=1.5 s signed_error=-0.459843749999999 m error=0.459843749999999 m ratio=-- q=--
+step: h=0.03125 s N=48 T=1.5 s signed_error=-0.229921875000002 m error=0.229921875000002 m ratio=1.99999999999998 q=0.999999999999983
+step: h=0.015625 s N=96 T=1.5 s signed_error=-0.114960937499994 m error=0.114960937499994 m ratio=2.00000000000012 q=1.00000000000009
+step: h=0.0078125 s N=192 T=1.5 s signed_error=-0.0574804687499881 m error=0.0574804687499881 m ratio=2.00000000000031 q=1.00000000000022
+complete_step: h=0.0625 s N=24 T=1.5 s signed_error=-0.459843749999999 m error=0.459843749999999 m ratio=-- q=--
+complete_step: h=0.03125 s N=48 T=1.5 s signed_error=-0.229921875000002 m error=0.229921875000002 m ratio=1.99999999999998 q=0.999999999999983
+complete_step: h=0.015625 s N=96 T=1.5 s signed_error=-0.114960937499994 m error=0.114960937499994 m ratio=2.00000000000012 q=1.00000000000009
+complete_step: h=0.0078125 s N=192 T=1.5 s signed_error=-0.0574804687499881 m error=0.0574804687499881 m ratio=2.00000000000031 q=1.00000000000022
+e=0.5: outgoing=1.6 m/s (expected 1.6), normal_K=3.2 J (expected 3.2); residuals=(0 m/s,0 J)
+e=0.1: outgoing=0.32 m/s (expected 0.32), normal_K=0.128 J (expected 0.128); residuals=(0 m/s,2.78e-17 J)
+e=0.01: outgoing=0.032 m/s (expected 0.032), normal_K=0.00128 J (expected 0.00128); residuals=(0 m/s,0 J)
+e=0.001: outgoing=0.0032 m/s (expected 0.0032), normal_K=1.28e-05 J (expected 1.28e-05); residuals=(0 m/s,-1.69e-21 J)
+e=0: outgoing=0 m/s (expected 0), normal_K=0 J (expected 0); residuals=(0 m/s,0 J)
+stationary step: N=200, position/velocity residuals=0, contacts=0
+stationary complete_step: N=200, position/velocity residuals=0, contacts=0
+uniform step: N=300, T=3 s, endpoint=(7.2,15.3) m, expected=(7.2,15.3); max residuals={'x_m': 1.3589129821411916e-13, 'y_m': 9.414691248821327e-14, 'vx_m_per_s': 0.0, 'vy_m_per_s': 0.0}; contacts=0
+uniform complete_step: N=300, T=3 s, endpoint=(7.2,15.3) m, expected=(7.2,15.3); max residuals={'x_m': 1.3589129821411916e-13, 'y_m': 9.414691248821327e-14, 'vx_m_per_s': 0.0, 'vy_m_per_s': 0.0}; contacts=0
+e=0 floor: vn_after=0, K_after=0.6125 J, dK=-12.8 J; contacts=21, impacts=1; max residuals={'tangent_velocity_m_per_s': 0.0, 'tangent_position_m': 3.552713678800501e-15, 'remaining_K_J': 1.1102230246251565e-16, 'inward_velocity_m_per_s': 0.0, 'initial_correction_m': 2.7755575615628914e-17, 'energy_balance_J': 1.7763568394002505e-15}
+e=0 left: vn_after=0, K_after=0.6125 J, dK=-12.8 J; contacts=21, impacts=1; max residuals={'tangent_velocity_m_per_s': 0.0, 'tangent_position_m': 3.552713678800501e-15, 'remaining_K_J': 1.1102230246251565e-16, 'inward_velocity_m_per_s': 0.0, 'initial_correction_m': 2.7755575615628914e-17, 'energy_balance_J': 1.7763568394002505e-15}
+reflection e=1.0: masses=(0.125,0.125); max residuals={'x_m': 8.881784197001252e-15, 'y_m': 0.0, 'vx_m_per_s': 0.0, 'vy_m_per_s': 0.0, 'normal_before_m_per_s': 0.0, 'normal_after_m_per_s': 0.0, 'correction_x_m': 3.3584246494910985e-15, 'correction_y_m': 0.0}; contacts A/B=[{'floor': 3, 'left': 1, 'right': 2}, {'floor': 3, 'left': 2, 'right': 1}]; impacts A/B=[{'floor': 3, 'left': 1, 'right': 2}, {'floor': 3, 'left': 2, 'right': 1}]; min pre-contact threshold distance=0.0074 m
+reflection e=0.8: masses=(0.125,0.125); max residuals={'x_m': 0.8263200000000017, 'y_m': 0.0, 'vx_m_per_s': 0.6259999999999999, 'vy_m_per_s': 0.0, 'normal_before_m_per_s': 0.0, 'normal_after_m_per_s': 0.0, 'correction_x_m': 0.0, 'correction_y_m': 0.0}; contacts A/B=[{'floor': 4, 'left': 1, 'right': 1}, {'floor': 4, 'left': 1, 'right': 1}]; impacts A/B=[{'floor': 4, 'left': 1, 'right': 1}, {'floor': 4, 'left': 1, 'right': 1}]; min pre-contact threshold distance=0.0074 m
+free reflection step: max residuals={'x_m': 0.0, 'y_m': 0.0, 'vx_m_per_s': 0.0, 'vy_m_per_s': 0.0}; contacts=0 (geometric clearance checked)
+free reflection complete_step: max residuals={'x_m': 0.0, 'y_m': 0.0, 'vx_m_per_s': 0.0, 'vy_m_per_s': 0.0}; contacts=0 (geometric clearance checked)
+mass invariance e=1.0: masses=(0.125,128.0); max residuals={'x_m': 0.0, 'y_m': 0.0, 'vx_m_per_s': 0.0, 'vy_m_per_s': 0.0, 'normal_before_m_per_s': 0.0, 'normal_after_m_per_s': 0.0, 'correction_x_m': 0.0, 'correction_y_m': 0.0}; contacts A/B=[{'floor': 3, 'left': 1, 'right': 2}, {'floor': 3, 'left': 1, 'right': 2}]; impacts A/B=[{'floor': 3, 'left': 1, 'right': 2}, {'floor': 3, 'left': 1, 'right': 2}]; min pre-contact threshold distance=0.0074 m
+mass invariance e=0.8: masses=(0.125,128.0); max residuals={'x_m': 0.0, 'y_m': 0.0, 'vx_m_per_s': 0.0, 'vy_m_per_s': 0.0, 'normal_before_m_per_s': 0.0, 'normal_after_m_per_s': 0.0, 'correction_x_m': 0.0, 'correction_y_m': 0.0}; contacts A/B=[{'floor': 4, 'left': 1, 'right': 1}, {'floor': 4, 'left': 1, 'right': 1}]; impacts A/B=[{'floor': 4, 'left': 1, 'right': 1}, {'floor': 4, 'left': 1, 'right': 1}]; min pre-contact threshold distance=0.0074 m

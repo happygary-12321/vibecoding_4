@@ -125,12 +125,55 @@ After activating Python 3.12.10, run the existing checks from the root:
 
 ```bat
 python -B -m doctest -v state.py integration.py contacts.py
-python -B check_integration.py
-python -B check_contacts.py
-python -B check_scheduling.py
-python -B check_cli.py
+python -B -m hw4.run_tests
 python -m pip check
 ```
+
+[hw4/](hw4/README.md) contains analytical, conservation-property, convergence,
+symmetry/invariance, and limiting-case tests,
+individual/combined execution commands, and agent-generated reports for
+[Part 1](hw4/step1_results.md), [Part 2](hw4/step2_results.md),
+[Part 3](hw4/step3_results.md), [Part 4](hw4/step4_results.md), and
+[Part 5](hw4/step5_results.md).
+The complete runner includes every root/HW4 `check_*.py` suite, including
+legacy integration/contact/scheduler/CLI tests and the new function-audit tests.
+It fails on test failures or import errors; file outputs stay temporary and
+headless. See the [function coverage inventory](hw4/function_coverage.md) and
+[audit results](hw4/coverage_results.md) for exact test associations and limits.
+Native GUI behavior and plot visual fidelity are not established by this suite.
+The completed audit includes 58 test methods, including repeated-overload
+time accounting and side-wall response above the displayed wall height.
+The latest execution is recorded in [coverage results](hw4/coverage_results.md).
+The subsequent [HW4 intentional-bug experiment](hw4/bug_experiment_results.md)
+detected a temporary right-wall restitution defect in 10 test methods.
+All 58 tests passed before mutation and after byte-for-byte production restoration;
+the [raw evidence](hw4/bug_experiment/) preserves all three runs separately.
+HW4 was tested on CPython 3.12.10 but imposes no exact patch-version guard;
+the four legacy regression scripts retain their existing guards.
+`hw4/check_analytical.py` adds independent analytical trajectory checks using
+`unittest`: an upward launch through its apex (both integration entry points,
+two timesteps and two masses), and a gravity-free elastic wall reflection with
+impact aligned to the timestep. Its docstrings derive the references. Launch
+height is checked against the exact continuous solution plus the signed Euler
+bias `-g*dt*t/2`; roundoff allowances are `1e-11` absolute in the quantity's SI
+unit and `1e-13` relative. The wall trajectory has no truncation error for its
+chosen aligned steps. This suite runs separately from the integration/contact
+suites embedded in figure generation. Orientation is not part of this model.
+`hw4/check_conservation.py` independently checks gravity-free momentum and
+kinetic energy, repeated elastic wall/floor impacts, inelastic energy balance,
+and the production energy helper. It does not require particle momentum
+conservation across fixed-wall impacts or exact mechanical-energy conservation
+under gravity.
+`hw4/check_convergence.py` tests first-order vertical-position convergence
+at four timesteps and a shared physical endpoint, for both integration APIs.
+This smooth-flight test does not establish convergence order across collisions.
+`hw4/check_symmetry.py` tests horizontal reflection and mass-independent motion,
+including gravity and elastic/inelastic contacts matched by surface identity.
+It excludes corner/near-touching fixtures and makes no time-reversibility or
+mass-invariant momentum/energy claim.
+`hw4/check_limiting.py` checks zero-gravity position evolution, stationary
+interior motion, e=0 impacts and stationary-touch follow-up, and positive
+restitution approaching zero with relative-only small-response checks.
 
 The CLI suite generates a short headless run in a temporary directory; these commands are not all read-only. It does not launch a GUI. Numerical checks distinguish signed integration error from floating-point residuals; detailed tolerances and the still-proposed first-impact criterion are in SPEC. That proposed criterion remains unimplemented and unexecuted.
 

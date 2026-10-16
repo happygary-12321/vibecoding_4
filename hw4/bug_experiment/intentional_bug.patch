@@ -1,0 +1,11 @@
+--- a/contacts.py
++++ b/contacts.py
+@@ -186,7 +186,7 @@
+         correction, before = right - state.x, -state.vx
+         state.x = right
+         if state.vx > 0:
+-            state.vx = -restitution * state.vx
++            state.vx = -state.vx
+         records.append(ContactRecord("right", (correction, 0.0), before, -state.vx))
+ 
+     # Height is not a contact bound: no ceiling response exists, and side-wall
